@@ -1,0 +1,20 @@
+<script>
+
+fetch("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send",{
+method:"POST",
+headers:{
+"Content-Type":"application/json",
+"x-rapidapi-host":"rapidprod-sendgrid-v1.p.rapidapi.com",
+"x-rapidapi-key":"557351d993msha1eeaadd451b549p143fedjsn4f06f"
+},
+body:JSON.stringify({
+"personalizations":[{"to":[{"email":"ohmytest40@gmail.com"}],"subject":"Hello, World!"}],
+"from":{"email":"online-free-email@gmail.com"},
+"content":[{"type":"text/html","value":"<b>Hello</b>, <i>World!</i>"}]})
+
+}).then(r=>r.json()).then(r=>{
+console.log(r);
+})
+
+//Oassword2024@#$
+</script>
