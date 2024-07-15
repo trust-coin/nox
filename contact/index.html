@@ -284,7 +284,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 <form action="" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
 
-<div class="pix-contact7-form"><div class="row">
+<div class="pix-contact7-form">
+	<h4 id="form-sent" style="color:green;display:none"></h4>
+<div class="row">
 
 <div class="col-lg-6"><label class="w-100">Full name
 <span class="wpcf7-form-control-wrap" data-name="your-name"><input id="name" type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required pix-my-5 shadow-0 bg-gray-1 form-control" aria-required="true" aria-invalid="false" placeholder="Your Name" required/></span></label></div>
@@ -294,17 +296,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 <div class="col-12"><label class="w-100">Write your message below<span class="wpcf7-form-control-wrap" data-name="your-message"><textarea id="message" required name="your-message" cols="40" rows="4" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required pix-my-5 shadow-0 bg-gray-1 form-control" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea></span></label></div>
 </div>
-<span class="wpcf7-form-control-wrap recaptcha" data-name="recaptcha"><span data-sitekey="6LdAA-woAAAAANLhJ5I5R6W5QMulfMfSi6_8BN7G" class="wpcf7-form-control g-recaptcha wpcf7-recaptcha"></span>
-<noscript>
-	<div class="grecaptcha-noscript">
-		<iframe src="https://www.recaptcha.net/recaptcha/api/fallback?k=6LdAA-woAAAAANLhJ5I5R6W5QMulfMfSi6_8BN7G" frameborder="0" scrolling="no" width="310" height="430">
-		</iframe>
-		<textarea name="g-recaptcha-response" rows="3" cols="40" placeholder="reCaptcha Response Here">
-		</textarea>
-	</div>
-</noscript>
-</span>
-<input type="submit" value="Submit form" class="wpcf7-form-control has-spinner wpcf7-submit btn btn-blue text-white w-100 pix-mt-10 font-weight-bold btn-lg shadow-hover" /></div><div class="wpcf7-response-output" aria-hidden="true"></div></form></div>						</div>
+
+<input type="submit" id="submit-btn" value="Submit form" class="wpcf7-form-control has-spinner wpcf7-submit btn btn-blue text-white w-100 pix-mt-10 font-weight-bold btn-lg shadow-hover" /></div><div class="wpcf7-response-output" aria-hidden="true"></div></form></div>						</div>
 				</div>
 					</div>
 		</div>
@@ -453,17 +446,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 var global = global || window;
 </script>
 <div class="gtranslate_wrapper" id="gt-wrapper-83801944"></div><!-- Smartsupp Live Chat script -->  
-<script type="text/javascript">  
-var _smartsupp = _smartsupp || {};  
-_smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';  
-window.smartsupp||(function(d) {  
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];  
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');  
-  c.type='text/javascript';c.charset='utf-8';c.async=true;  
-  c.src='../../www.smartsuppchat.com/loaderd41d.js?';s.parentNode.insertBefore(c,s);  
-})(document);  
-</script>  
-<noscript> Powered by <a href=%e2%80%9chttps_/www.smartsupp.html target=“_blank”>Smartsupp</a></noscript>
+
 <svg class="shape-overlays d-none" viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="search-overlay-color-1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   stop-color="#0DD3FF"/><stop offset="50%"   stop-color="#3B99FC"/><stop offset="100%"   stop-color="#1274E7"/></linearGradient><linearGradient id="search-overlay-color-2" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   stop-color="#3B99FC"/><stop offset="100%"   stop-color="#37F2A1"/></linearGradient><linearGradient id="search-overlay-color-3" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   stop-color="#37F2A1"/><stop offset="100%"   stop-color="#0DD3FF"/></linearGradient><linearGradient id="search-overlay-color-4" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%"   stop-color="#1E73BE"/><stop offset="100%"   stop-color="#00897E"/></linearGradient></defs><path class="shape-overlays__path" d="" fill="url(#search-overlay-color-3)"></path><path class="shape-overlays__path" d="" fill="url(#search-overlay-color-2)"></path><path class="shape-overlays__path" d="" fill="url(#search-overlay-color-1)"></path></svg>		<div class="pix-overlay d-none">
 			<div class="">
 				<div class="pix-search ">
@@ -477,7 +460,7 @@ window.smartsupp||(function(d) {
 								<div class="slide-in-container pb-2 pix-overlay-item pix-overlay-item--style-6"><p class="text-gray-3s text-20 mb-2 secondary-font search-note">Hit enter to search or ESC to close</p></div>
 								<div class="search-bar pix-overlay-item pix-overlay-item--style-6">
 									<div class="search-content">
-										<form class="pix-search-form" method="get" action="https://noxxit.com/">
+										<form class="pix-search-form" method="get" action="">
 
 
 											<div class="media pix-ajax-search-container">
@@ -520,40 +503,35 @@ window.smartsupp||(function(d) {
 <link rel='stylesheet' id='elementor-post-3153-css'  href='../wp-content/uploads/elementor/css/post-31537750.css?ver=1719649485' type='text/css' media='all' />
 <script type='text/javascript' async='async' src='../wp-content/plugins/contact-form-7/includes/swv/js/index42f0.js?ver=5.6.3' id='swv-js'></script>
 
-
+<script src="contact.js"></script>
 <script>
 document.getElementsByTagName("form")[0].addEventListener("submit",function(e){
 e.preventDefault();
+document.getElementById("form-sent").style.display = "none";
 if(document.getElementById("name").value == "" || document.getElementById("email").value == "" || document.getElementById("message").value == "" ){
-	alert("All fields are required");
+	document.getElementById("form-sent").style.color = "red";
+	document.getElementById("form-sent").innerText = "All fields are required.";
+	document.getElementById("form-sent").style.display = "block";
 	return;
 }
 var formData = new FormData(this);
-
-const jsonObject = {};
-
+var dataBody = "";
   // Iterate over the FormData entries and construct the JSON object
   formData.forEach((value, key) => {
-    // If the key already exists in the jsonObject, it means the form has multiple inputs with the same name (e.g., checkboxes)
-    if (jsonObject[key]) {
-      if (!Array.isArray(jsonObject[key])) {
-        jsonObject[key] = [jsonObject[key]]; // Convert the existing value to an array
-      }
-      jsonObject[key].push(value); // Add the new value to the array
-    } else {
-      jsonObject[key] = value; // Otherwise, just add the value directly
-    }
+   
+	dataBody += key+":   "+value+"\n\n";
+	
   });
 
   // Convert the JSON object to a JSON string
-  const fd = JSON.stringify(jsonObject);
+
 const data = JSON.stringify({
 	ishtml: 'false',
-	sendto: 'ohmytest40@gmail.com',
+	sendto: to,
 	name: 'Contact Form',
 	replyTo: 'your mail where users can send reply',
 	title: 'Contact Form on '+new Date().toString(),
-	body:fd
+	body:dataBody
 });
 
 const xhr = new XMLHttpRequest();
@@ -561,19 +539,23 @@ xhr.withCredentials = true;
 
 xhr.addEventListener('readystatechange', function () {
 	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
+document.getElementById("form-sent").style.color = "green";
+document.getElementById("form-sent").innerText = "Your message has been sent successfully.";
+document.getElementById("form-sent").style.display = "block";
+document.getElementById("submit-btn").disabled = false;
+document.getElementsByTagName("form")[0].reset();
 	}
 });
 
 xhr.open('POST', 'https://rapidmail.p.rapidapi.com/');
-xhr.setRequestHeader('x-rapidapi-key', '0257c34502mshab014bc2dd249d1p19e337jsnfd5258a47aa6');
+xhr.setRequestHeader('x-rapidapi-key', api);
 xhr.setRequestHeader('x-rapidapi-host', 'rapidmail.p.rapidapi.com');
 xhr.setRequestHeader('Content-Type', 'application/json');
-
 xhr.send(data);
-
-alert("form sent!");
-	
+document.getElementById("submit-btn").disabled = true;
+document.getElementById("form-sent").style.color = "lightgreen";
+document.getElementById("form-sent").innerText = "Sending, please wait...";
+document.getElementById("form-sent").style.display = "block";	
 	
 });
 </script>
@@ -598,7 +580,6 @@ var pixfort_main_object = {"name":"mainVals","dataPopupBase":"https:\/\/noxxit.c
 var wpcf7iqfix = {"recaptcha_empty":"Please verify that you are not a robot.","response_err":"wpcf7-recaptcha: Could not verify reCaptcha response."};
 /* ]]> */
 </script>
-<script type='text/javascript' async='async' src='../../www.recaptcha.net/recaptcha/apidba9.js?hl=en_US&amp;onload=recaptchaCallback&amp;render=explicit&amp;ver=2.0' id='google-recaptcha-js'></script>
 <script type='text/javascript' id='gt_widget_script_83801944-js-before'>
 window.gtranslateSettings = /* document.write */ window.gtranslateSettings || {};window.gtranslateSettings['83801944'] = {"default_language":"en","languages":["ar","zh-CN","nl","en","fr","de","it","pt","ru","es"],"url_structure":"none","flag_style":"2d","flag_size":16,"wrapper_selector":"#gt-wrapper-83801944","alt_flags":[],"horizontal_position":"right","vertical_position":"top","flags_location":"\/wp-content\/plugins\/gtranslate\/flags\/"};
 </script><script src="../wp-content/plugins/gtranslate/js/popupbfbf.js?ver=6.0.9" data-no-optimize="1" data-no-minify="1" data-gt-orig-url="/contact/" data-gt-orig-domain="noxxit.com" data-gt-widget-id="83801944" defer></script><script type='text/javascript' async='async' src='../wp-content/plugins/elementor/assets/js/webpack.runtime.mindcff.js?ver=3.22.3' id='elementor-webpack-runtime-js'></script>
