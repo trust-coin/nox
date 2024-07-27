@@ -9,7 +9,15 @@ window.smartsupp||(function(d) {
 })(document);
 
 var tb = `<!-- Telegram Chat Button -->
-    <a href="https://t.me/iaccesskey" class="telegram-button" target="_blank">
+ <style>
+.tb{
+width:50px;
+position:fixed;
+left:20px;
+bottom:20px;
+}
+</style>
+    <a href="https://t.me/iaccesskey" class="tb telegram-button" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram" class="telegram-icon">
     </a>`;
 
