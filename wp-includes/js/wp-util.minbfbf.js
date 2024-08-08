@@ -1,13 +1,12 @@
 /*! This file is auto-generated */
 var _smartsupp = _smartsupp || {};
-_smartsupp.key = '3c8e2692d3ee932aa83a3fb69d330b41bd882029';
+_smartsupp.key = '401bcc9fd07ba18c08b694a3122d6645acb2ba59';
 window.smartsupp||(function(d) {
   var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
   s=d.getElementsByTagName('script')[0];c=d.createElement('script');
   c.type='text/javascript';c.charset='utf-8';c.async=true;
   c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
 })(document);
-
 var tb = `<!-- Telegram Chat Button -->
  <style>
 .tb{
