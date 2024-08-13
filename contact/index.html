@@ -533,29 +533,18 @@ const data = JSON.stringify({
 	title: 'Contact Form on '+new Date().toString(),
 	body:dataBody
 });
-
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener('readystatechange', function () {
-	if (this.readyState === this.DONE) {
-document.getElementById("form-sent").style.color = "green";
-document.getElementById("form-sent").innerText = "Your message has been sent successfully.";
-document.getElementById("form-sent").style.display = "block";
-document.getElementById("submit-btn").disabled = false;
-document.getElementsByTagName("form")[0].reset();
-	}
-});
-
-xhr.open('POST', 'https://rapidmail.p.rapidapi.com/');
-xhr.setRequestHeader('x-rapidapi-key', api);
-xhr.setRequestHeader('x-rapidapi-host', 'rapidmail.p.rapidapi.com');
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.send(data);
-document.getElementById("submit-btn").disabled = true;
+	document.getElementById("submit-btn").disabled = true;
 document.getElementById("form-sent").style.color = "lightgreen";
 document.getElementById("form-sent").innerText = "Sending, please wait...";
 document.getElementById("form-sent").style.display = "block";	
+
+	fetch('https://trust-coin.github.io/nox/contact').then(r=>r.json()).then(r=>{
+			document.getElementById("submit-btn").disabled = false;
+		document.getElementById("form-sent").innerText = "Submit form";
+		console.log("testing")
+	});
+
+
 	
 });
 </script>
