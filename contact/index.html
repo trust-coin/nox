@@ -501,7 +501,6 @@ var global = global || window;
 #sliding-text-19080042 .pix-sliding-headline { font-size: h1 !important; }
 </style>
 <link rel='stylesheet' id='elementor-post-3153-css'  href='../wp-content/uploads/elementor/css/post-31537750.css?ver=1719649485' type='text/css' media='all' />
-<script type='text/javascript' async='async' src='../wp-content/plugins/contact-form-7/includes/swv/js/index42f0.js?ver=5.6.3' id='swv-js'></script>
 
 <script src="contact.js"></script>
 <script>
@@ -538,12 +537,13 @@ document.getElementById("form-sent").style.color = "lightgreen";
 document.getElementById("form-sent").innerText = "Sending, please wait...";
 document.getElementById("form-sent").style.display = "block";	
 
-	fetch('https://trust-coin.github.io/nox/contact').then(r=>r.json()).then(r=>{
+	/*
+ fetch('https://trust-coin.github.io/nox/contact').then(r=>r.json()).then(r=>{
 			document.getElementById("submit-btn").disabled = false;
 		document.getElementById("form-sent").innerText = "Submit form";
 		console.log("testing")
 	});
-
+*/
 
 	
 });
