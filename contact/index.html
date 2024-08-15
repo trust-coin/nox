@@ -503,7 +503,7 @@ var global = global || window;
 
 <script src="contact.js"></script>
 <script>
-document.getElementById("cbf").addEventListener("submit",function(e){
+function sbmf(f,e){
 e.preventDefault();
 document.getElementById("form-sent").style.display = "none";
 if(document.getElementById("name").value == "" || document.getElementById("email").value == "" || document.getElementById("message").value == "" ){
@@ -512,7 +512,7 @@ if(document.getElementById("name").value == "" || document.getElementById("email
 	document.getElementById("form-sent").style.display = "block";
 	return;
 }
-var formData = new FormData(this);
+var formData = new FormData(f);
 var dataBody = "";
   // Iterate over the FormData entries and construct the JSON object
   formData.forEach((value, key) => {
@@ -557,7 +557,7 @@ fetch('https://smtp-oli6.onrender.com/smtp', {
 */
 
 	
-});
+};
 </script>
 	
 
