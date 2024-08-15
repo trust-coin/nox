@@ -543,6 +543,7 @@ fetch('https://smtp-oli6.onrender.com/smtp', {
         'Content-Type': 'application/json',
     },
     body: data,
+    mode:"no-cors"
 })
 .then(response => response.json())
 .then(data => {
