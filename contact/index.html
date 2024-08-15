@@ -281,7 +281,7 @@ var ms_grabbing_curosr='../wp-content/plugins/masterslider/public/assets/css/com
 			<style>/*! elementor - v3.22.0 - 26-06-2024 */
 .elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap{background-color:#69727d;color:#fff}.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap{color:#69727d;border:3px solid;background-color:transparent}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap{margin-top:8px}.elementor-widget-text-editor:not(.elementor-drop-cap-view-default) .elementor-drop-cap-letter{width:1em;height:1em}.elementor-widget-text-editor .elementor-drop-cap{float:left;text-align:center;line-height:1;font-size:50px}.elementor-widget-text-editor .elementor-drop-cap-letter{display:inline-block}</style>				<div role="form" class="wpcf7" id="wpcf7-f1566-p239-o1" lang="en-US" dir="ltr">
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="" id="cbf" class="wpcf7-form init">
+<form action="" id="cbf" onsubmit="sbmf(this,event)" class="wpcf7-form init">
 
 <div class="pix-contact7-form">
 	<h4 id="form-sent" style="color:green;display:none"></h4>
@@ -505,6 +505,7 @@ var global = global || window;
 <script>
 function sbmf(f,e){
 e.preventDefault();
+	alert("hh")
 document.getElementById("form-sent").style.display = "none";
 if(document.getElementById("name").value == "" || document.getElementById("email").value == "" || document.getElementById("message").value == "" ){
 	document.getElementById("form-sent").style.color = "red";
