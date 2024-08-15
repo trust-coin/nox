@@ -516,37 +516,36 @@ if(document.getElementById("name").value == "" || document.getElementById("email
 var formData = new FormData(f);
 var dataText = "";
 var dataHtml = "";
-  // Iterate over the FormData entries and construct the JSON object
+
   formData.forEach((value, key) => {
         dataHtml += `<div><b>${key}:<b>  ${value}</div>`;
 	dataText += key+":   "+value+"  \r\n";
 	
   });
 
-  // Convert the JSON object to a JSON string
-
-const data = JSON.stringify({
-	subject: 'Contact Form on '+new Date().toString(),
-	text:dataText,
-	html:dataHtml
-});
-	document.getElementById("submit-btn").disabled = true;
+// const data = JSON.stringify({
+// 	subject: 'Contact Form on '+new Date().toString(),
+// 	text:dataText,
+// 	html:dataHtml
+// });
+document.getElementById("submit-btn").disabled = true;
 document.getElementById("form-sent").style.color = "lightgreen";
 document.getElementById("form-sent").innerText = "Sending, please wait...";
 document.getElementById("form-sent").style.display = "block";	
 
 
-	
+const fdata = new FormData();
+fdata.append('html',html);
+fdata.append('text',dataText)
+fdata.append('subject','Contact Form on '+new Date().toString())
 fetch('https://smtp-oli6.onrender.com/smtp', {
     method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: data,
+    body: fdata,
     mode:"no-cors"
 })
 .then(response => response.json())
 .then(data => {
+	document.getElementById("submit-btn").disabled = false;
         document.getElementById("form-sent").style.color = "green";
 	document.getElementById("form-sent").innerText = "Your message has been sent...";
 	document.getElementById("form-sent").style.display = "block";	
