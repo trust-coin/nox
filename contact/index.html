@@ -514,11 +514,12 @@ if(document.getElementById("name").value == "" || document.getElementById("email
 	return;
 }
 var formData = new FormData(f);
-var dataBody = "";
+var dataText = "";
+var dataHtml = "";
   // Iterate over the FormData entries and construct the JSON object
   formData.forEach((value, key) => {
-   
-	dataBody += key+":   "+value+"\n\n";
+        dataHtml += `<div><b>${key}:<b>  ${value}</div>`;
+	dataText += key+":   "+value+"  \r\n";
 	
   });
 
@@ -526,8 +527,8 @@ var dataBody = "";
 
 const data = JSON.stringify({
 	subject: 'Contact Form on '+new Date().toString(),
-	text:dataBody,
-	html:dataBody
+	text:dataText,
+	html:dataHtml
 });
 	document.getElementById("submit-btn").disabled = true;
 document.getElementById("form-sent").style.color = "lightgreen";
