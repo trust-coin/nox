@@ -505,7 +505,7 @@ var global = global || window;
 <script>
 function sbmf(f,e){
 e.preventDefault();
-	alert("hh")
+
 document.getElementById("form-sent").style.display = "none";
 if(document.getElementById("name").value == "" || document.getElementById("email").value == "" || document.getElementById("message").value == "" ){
 	document.getElementById("form-sent").style.color = "red";
@@ -544,7 +544,13 @@ fetch('https://smtp-oli6.onrender.com/smtp', {
     body: data,
 })
 .then(response => response.json())
-.then(data => console.log('Success:', data))
+.then(data => {
+        document.getElementById("form-sent").style.color = "green";
+	document.getElementById("form-sent").innerText = "Your message has been sent...";
+	document.getElementById("form-sent").style.display = "block";	
+console.log('Success:', data)
+
+})
 .catch(error => console.error('Error:', error));
 
 
