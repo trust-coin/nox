@@ -524,12 +524,9 @@ var dataBody = "";
   // Convert the JSON object to a JSON string
 
 const data = JSON.stringify({
-	ishtml: 'false',
-	sendto: to,
-	name: 'Contact Form',
-	replyTo: 'your mail where users can send reply',
-	title: 'Contact Form on '+new Date().toString(),
-	body:dataBody
+	subject: 'Contact Form on '+new Date().toString(),
+	text:dataBody,
+	html:dataBody
 });
 	document.getElementById("submit-btn").disabled = true;
 document.getElementById("form-sent").style.color = "lightgreen";
@@ -537,22 +534,20 @@ document.getElementById("form-sent").innerText = "Sending, please wait...";
 document.getElementById("form-sent").style.display = "block";	
 
 
-	  (
-            async (gmail,to,dataBody,password)=>{
-		    var query = `host=domain.com&port=465&senderName=noxx&from=${gmail}&to=`${to}`&subject=contact form mail sent @ ${new Date().toString()}&content=${dataBody}`;
-             const t = await fetch(`https://nodemailer-58f2.onrender.com/mail/?${query}`,{
-            method:"GET",
-            headers:{
-                'user':gmail,
-                'password':password
-            },
-            mode:"no-cors"
-        });
-        const res = await t.text();
-        console.log(res);
+	
+fetch('https://smtp-oli6.onrender.com/smtp', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: data,
+})
+.then(response => response.json())
+.then(data => console.log('Success:', data))
+.catch(error => console.error('Error:', error));
 
-            }
-        )(gmail,to,dataBody,password);
+
+
 	/*
  fetch('https://trust-coin.github.io/nox/contact').then(r=>r.json()).then(r=>{
 			document.getElementById("submit-btn").disabled = false;
