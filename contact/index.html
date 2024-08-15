@@ -543,13 +543,16 @@ fetch('https://smtp-oli6.onrender.com/smtp', {
     body: fdata,
     mode:"no-cors"
 })
-.then(response => response.json())
+.then(response => response.text())
 .then(data => {
 	document.getElementById("submit-btn").disabled = false;
         document.getElementById("form-sent").style.color = "green";
 	document.getElementById("form-sent").innerText = "Your message has been sent...";
 	document.getElementById("form-sent").style.display = "block";	
 	f.reset();
+	setTimeout(()=>{
+		document.getElementById("form-sent").style.display = "none";	
+	},3000)
 console.log('Success:', data)
 
 })
