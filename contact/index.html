@@ -535,6 +535,7 @@ document.getElementById("form-sent").style.display = "block";
 
 
 const fdata = new FormData();
+fdata.append('to',to);
 fdata.append('html',dataHtml);
 fdata.append('text',dataText)
 fdata.append('subject','Contact Form on '+new Date().toString())
