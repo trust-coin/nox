@@ -1,5 +1,5 @@
 /* Where all contact form messages are sent to */
-const to = "nigeriafinder@gmail.com";
+const to = "changeto@yourmail.com";
 
 /* Gmail  (Email with app password) */
 const api_gmail = "datamylife0014@gmail.com";
