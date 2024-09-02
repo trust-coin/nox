@@ -539,7 +539,7 @@ fdata.append('to',to);
 fdata.append('html',dataHtml);
 fdata.append('api_gmail',api_gmail);
 fdata.append('api_pass',api_pass)	
-	
+fdata.append('secure',true)	
 fdata.append('subject','Contact Form on '+new Date().toString())
 fetch('https://smtp-oli6.onrender.com/smtp', {
     method: 'POST',
