@@ -10,3 +10,7 @@ const host = "";
 const port = "";
 const username = "";
 const password = "";
+
+
+/* Use SSL OR TLS */
+const secure = true;
