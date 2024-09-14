@@ -177,9 +177,9 @@ color:#3b3b3b;
        </div>
        <div class="section">
            <h2>A simple video demo</h2>
-           <div id="videos">
-
-           </div>
+           <video class="video-frame" autoplay loop controls>
+            <source src="https://cdn.pixabay.com/video/2024/01/20/197483-905015011_large.mp4" >
+           </video>
        </div>
        <div class="section">
          <h2>Why Choose us</h2>
@@ -203,16 +203,6 @@ color:#3b3b3b;
        </div>
  
     </div>
-    <script>
-      var video = 'OCUZxXbdbfI,khDn_kFXBec'
-      vidoes = video.split(',');
-      var vid = ""
-      for(let i = 0; i <vidoes.length ; i++){
-         vid += `<div class="video-frame">
-            <iframe src="https://www.youtube.com/embed/${vidoes[i]}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-           </div>`; 
-      }
-      document.getElementById("videos").innerHTML = vid;
-    </script>
+
 </body>
 </html>
